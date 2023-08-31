@@ -1,0 +1,9 @@
+---
+layout: layout.html
+---
+
+{% for c in collections.concerts %}
+  <h2>
+    <a href="{{ c.url }}">{{ c.data.title }}</a>
+  </h2>
+{% endfor %}
