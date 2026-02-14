@@ -16,22 +16,6 @@
   --color-change: #1a1a1a;
 }
 
-@media (prefers-color-scheme: dark) {
-  @theme {
-    /* Dark theme colors */
-    --color-background: #0a0a0a;
-    --color-foreground: #fafafa;
-    --color-primary: #60a5fa;
-    --color-primary-foreground: #0a0a0a;
-    --color-secondary: #1f1f1f;
-    --color-secondary-foreground: #fafafa;
-    --color-muted: #1f1f1f;
-    --color-muted-foreground: #9ca3af;
-    --color-border: #2a2a2a;
-    --color-change: #fafafa;
-  }
-}
-
 @layer base {
   body {
     background-color: var(--color-background);
