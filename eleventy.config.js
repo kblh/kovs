@@ -29,4 +29,16 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addPassthroughCopy("fotogalerie");
+  eleventyConfig.addPassthroughCopy({
+    "node_modules/alpinejs/dist/cdn.min.js": "js/alpine.js",
+  });
+
+  // baseUrl: prázdné lokálně, "/kovs" na GitHub Pages – pro fungování stylů a odkazů v obou prostředích
+  eleventyConfig.addGlobalData("baseUrl", () =>
+    process.env.ELEVENTY_PRODUCTION ? "/kovs" : ""
+  );
+
+  return {
+    pathPrefix: process.env.ELEVENTY_PRODUCTION ? "/kovs" : "/",
+  };
 };

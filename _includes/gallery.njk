@@ -8,8 +8,8 @@
     {% endif %}
     <meta http-equiv="x-ua-compatible" content="ie=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"/>
-    <link rel="stylesheet" href="/style.css?v={{ version or '1' }}"/>
-    <script defer src="/js/alpine.js?v={{ version or '1' }}"></script>
+    <link rel="stylesheet" href="{{ baseUrl }}/style.css?v={{ version or '1' }}"/>
+    <script defer src="{{ baseUrl }}/js/alpine.js?v={{ version or '1' }}"></script>
   </head>
   <body x-data="galleryLightbox()" class="bg-gray-50">
     {% include "navigation.njk" %}
@@ -33,12 +33,12 @@
           {% set imageIndex = loop.index %}
           <div 
             class="relative group cursor-pointer overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 aspect-square"
-            @click="openLightbox('{{ image.origPath }}', {{ imageIndex }})"
+            @click="openLightbox('{{ baseUrl }}{{ image.origPath }}', {{ imageIndex }})"
             data-image-index="{{ imageIndex }}"
-            data-orig-path="{{ image.origPath }}"
+            data-orig-path="{{ baseUrl }}{{ image.origPath }}"
           >
             <img 
-              src="{{ image.thumbPath }}" 
+              src="{{ baseUrl }}{{ image.thumbPath }}" 
               alt="Obrázek {{ imageIndex }}"
               class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
               loading="lazy"

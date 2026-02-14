@@ -9,7 +9,7 @@
     <div class="max-w-7xl mx-auto px-4 py-6 w-full">
       <h2 class="text-sm font-medium text-gray-500 uppercase tracking-wide mb-2">Následující koncert</h2>
       <div class="bg-white rounded-lg shadow p-4 flex flex-wrap items-baseline gap-2">
-        <a href="{{ nextConcert.url }}" class="text-xl font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+        <a href="{{ baseUrl }}{{ nextConcert.url }}" class="text-xl font-semibold text-blue-600 hover:text-blue-800 hover:underline">
           {{ nextConcert.data.title }}
         </a>
         {% if nextConcert.data.date %}

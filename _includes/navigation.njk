@@ -2,13 +2,13 @@
   <div class="max-w-7xl mx-auto px-4 py-4">
     <ul class="flex flex-wrap gap-4 items-center">
       <li>
-        <a href="/" class="text-gray-700 hover:text-gray-900 font-medium transition-colors relative z-50 {% if page.url == '/' %}text-blue-600 font-semibold{% endif %}">
+        <a href="{{ baseUrl }}/" class="text-gray-700 hover:text-gray-900 font-medium transition-colors relative z-50 {% if page.url == '/' %}text-blue-600 font-semibold{% endif %}">
           Domů
         </a>
       </li>
       {% if collections.koncerty %}
         <li>
-          <a href="/koncerty/" class="text-gray-700 hover:text-gray-900 font-medium transition-colors relative z-50 {% if page.url == '/koncerty/' %}text-blue-600 font-semibold{% endif %}">
+          <a href="{{ baseUrl }}/koncerty/" class="text-gray-700 hover:text-gray-900 font-medium transition-colors relative z-50 {% if page.url == '/koncerty/' %}text-blue-600 font-semibold{% endif %}">
             Koncerty
           </a>
         </li>
@@ -16,7 +16,7 @@
       {% if collections.pages %}
         {% for navPage in collections.pages %}
           <li>
-            <a href="{{ navPage.url }}" class="text-gray-700 hover:text-gray-900 font-medium transition-colors relative z-50 {% if navPage.url == page.url %}text-blue-600 font-semibold{% endif %}">
+            <a href="{{ baseUrl }}{{ navPage.url }}" class="text-gray-700 hover:text-gray-900 font-medium transition-colors relative z-50 {% if navPage.url == page.url %}text-blue-600 font-semibold{% endif %}">
               {{ navPage.data.title }}
             </a>
           </li>
@@ -25,7 +25,7 @@
       {# {% if collections.galerie %}
         {% for galeriePage in collections.galerie %}
           <li>
-            <a href="{{ galeriePage.url }}" class="text-gray-700 hover:text-gray-900 font-medium transition-colors relative z-50 {% if galeriePage.url == page.url %}text-blue-600 font-semibold{% endif %}">
+            <a href="{{ baseUrl }}{{ galeriePage.url }}" class="text-gray-700 hover:text-gray-900 font-medium transition-colors relative z-50 {% if galeriePage.url == page.url %}text-blue-600 font-semibold{% endif %}">
               {{ galeriePage.data.title }}
             </a>
           </li>

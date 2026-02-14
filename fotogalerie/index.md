@@ -15,7 +15,7 @@ Vítejte na stránce fotogalerií. Vyberte si jednu z následujících galerií:
 {% for item in collections.galerie %}
   {% if item.url != page.url %}
   <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
-    <a href="{{ item.url }}" class="block">
+    <a href="{{ baseUrl }}{{ item.url }}" class="block">
       <div class="p-6">
         <h3 class="text-2xl font-bold mb-2 text-gray-800 hover:text-blue-600 transition-colors">
           {{ item.data.title }}

@@ -6,5 +6,5 @@ tags: "nav"
 
 {% for item in collections.koncerty %}
 
-  <h3>--- <a href="{{ item.url }}">{{ item.data.title }}</a></h3>
+  <h3>--- <a href="{{ baseUrl }}{{ item.url }}">{{ item.data.title }}</a></h3>
 {% endfor %}
