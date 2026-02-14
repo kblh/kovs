@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>{{ title }}</title>
+    <meta charset="UTF-8"/>
+    {% if desc %}
+      <meta name="description" content="{{ desc }}"/>
+    {% endif %}
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"/>
+    <link rel="stylesheet" href="/style.css?v={{ version or '1' }}"/>
+    <script defer src="/js/alpine.js?v={{ version or '1' }}"></script>
+  </head>
+  <body>
+    {% include "navigation.njk" %}
+    <article class="max-w-4xl mx-auto px-4 py-8">
+      <header class="mb-8">
+        <h1 class="text-4xl font-bold mb-4">{{ title }}</h1>
+        {% if date %}
+          <time class="text-gray-600 text-lg" datetime="{{ date }}">
+            {{ date | date }}
+          </time>
+        {% endif %}
+        {% if desc %}
+          <p class="text-xl text-gray-700 mt-2">{{ desc }}</p>
+        {% endif %}
+      </header>
+      
+      <div class="prose prose-lg max-w-none">
+        {{ content | safe }}
+      </div>
+    </article>
+  </body>
+</html>

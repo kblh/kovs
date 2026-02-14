@@ -1,0 +1,33 @@
+{% extends "_includes/default.njk" %}
+
+{% block title %}It does work{% endblock %}
+
+{% block content %}
+  <div class="min-h-screen flex flex-col">
+  {% if collections.nextConcert[0] %}
+    {% set nextConcert = collections.nextConcert[0] %}
+    <div class="max-w-7xl mx-auto px-4 py-6 w-full">
+      <h2 class="text-sm font-medium text-gray-500 uppercase tracking-wide mb-2">Následující koncert</h2>
+      <div class="bg-white rounded-lg shadow p-4 flex flex-wrap items-baseline gap-2">
+        <a href="{{ nextConcert.url }}" class="text-xl font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+          {{ nextConcert.data.title }}
+        </a>
+        {% if nextConcert.data.date %}
+          <time class="text-gray-600" datetime="{{ nextConcert.data.date }}">
+            {{ nextConcert.data.date | date }}
+          </time>
+        {% endif %}
+      </div>
+    </div>
+  {% endif %}
+  <div class="flex-1 flex justify-center items-center">
+    <div>
+      <span class="text-change">Good design</span><br/>
+      <span class="change">is<br/>as little design<br/>as possible XXXX</span><br/>
+      <span x-data="{message:'🤖 Hello World 🤓'}" x-text="message"></span>
+      <button x-data="{ label: 'Click Here' }" x-text="label">sdsdds</button>
+
+    </div>
+  </div>
+  </div>
+{% endblock %}

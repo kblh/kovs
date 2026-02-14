@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="cs">
+  <head>
+    <title>{{ title }}</title>
+    <meta charset="UTF-8"/>
+    {% if desc %}
+      <meta name="description" content="{{ desc }}"/>
+    {% endif %}
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"/>
+    <link rel="stylesheet" href="/style.css?v={{ version or '1' }}"/>
+    <script defer src="/js/alpine.js?v={{ version or '1' }}"></script>
+  </head>
+  <body x-data="galleryLightbox()" class="bg-gray-50">
+    {% include "navigation.njk" %}
+    <article class="max-w-7xl mx-auto px-4 py-8">
+      <header class="mb-8">
+        <h1 class="text-4xl font-bold mb-4">{{ title }}</h1>
+        {% if desc %}
+          <p class="text-xl text-gray-700 mt-2">{{ desc }}</p>
+        {% endif %}
+      </header>
+      
+      <div class="prose prose-lg max-w-none mb-8">
+        {{ content | safe }}
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {% set galleryFolder = folder | default("fotogalerie") %}
+        {% set images = galleryFolder | getGalleryImages %}
+        {% for image in images %}
+          {% set imageIndex = loop.index %}
+          <div 
+            class="relative group cursor-pointer overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 aspect-square"
+            @click="openLightbox('{{ image.origPath }}', {{ imageIndex }})"
+            data-image-index="{{ imageIndex }}"
+            data-orig-path="{{ image.origPath }}"
+          >
+            <img 
+              src="{{ image.thumbPath }}" 
+              alt="Obrázek {{ imageIndex }}"
+              class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-30 transition-opacity duration-300 flex items-center justify-center">
+              <svg class="w-12 h-12 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"></path>
+              </svg>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </article>
+
+    <!-- Lightbox Modal -->
+    <div 
+      x-show="isOpen"
+      x-cloak
+      @click.self="closeLightbox()"
+      @keydown.escape.window="closeLightbox()"
+      class="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4"
+      style="display: none;"
+    >
+      <!-- Close Button -->
+      <button 
+        @click="closeLightbox()"
+        class="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors z-10"
+        aria-label="Zavřít"
+      >
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+
+      <!-- Previous Button -->
+      <button 
+        @click="previousImage()"
+        class="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 transition-colors z-10"
+        aria-label="Předchozí"
+      >
+        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+      </button>
+
+      <!-- Next Button -->
+      <button 
+        @click="nextImage()"
+        class="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 transition-colors z-10"
+        aria-label="Další"
+      >
+        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        </svg>
+      </button>
+
+      <!-- Image Container -->
+      <div class="max-w-7xl max-h-full flex items-center justify-center">
+        <img 
+          :src="currentImage"
+          :alt="'Obrázek ' + currentIndex"
+          class="max-w-full max-h-[90vh] object-contain"
+          @load="imageLoaded = true"
+        />
+      </div>
+
+      <!-- Image Counter -->
+      <div class="absolute bottom-4 left-1/2 -translate-x-1/2 text-white text-lg">
+        <span x-text="currentIndex"></span> / <span x-text="totalImages"></span>
+      </div>
+    </div>
+
+    <script>
+      function galleryLightbox() {
+        // Collect all image data from the gallery
+        const imageElements = document.querySelectorAll('[data-image-index]');
+        const images = Array.from(imageElements).map(el => ({
+          index: parseInt(el.getAttribute('data-image-index')),
+          path: el.getAttribute('data-orig-path')
+        })).sort((a, b) => a.index - b.index);
+        
+        return {
+          isOpen: false,
+          currentImage: '',
+          currentIndex: 1,
+          imageLoaded: false,
+          totalImages: images.length,
+          images: images,
+          
+          openLightbox(imagePath, index) {
+            this.currentImage = imagePath;
+            this.currentIndex = index;
+            this.isOpen = true;
+            document.body.style.overflow = 'hidden';
+          },
+          
+          closeLightbox() {
+            this.isOpen = false;
+            document.body.style.overflow = '';
+          },
+          
+          nextImage() {
+            if (this.currentIndex < this.totalImages) {
+              this.currentIndex++;
+            } else {
+              this.currentIndex = 1;
+            }
+            this.updateImage();
+          },
+          
+          previousImage() {
+            if (this.currentIndex > 1) {
+              this.currentIndex--;
+            } else {
+              this.currentIndex = this.totalImages;
+            }
+            this.updateImage();
+          },
+          
+          updateImage() {
+            const image = this.images.find(img => img.index === this.currentIndex);
+            if (image) {
+              this.currentImage = image.path;
+            }
+          }
+        }
+      }
+    </script>
+
+    <style>
+      [x-cloak] { display: none !important; }
+    </style>
+  </body>
+</html>
+
