@@ -53,6 +53,8 @@
       x-cloak
       @click.self="closeLightbox()"
       @keydown.escape.window="closeLightbox()"
+      @keydown.left.window="isOpen && ($event.preventDefault(), previousImage())"
+      @keydown.right.window="isOpen && ($event.preventDefault(), nextImage())"
       class="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4"
       style="display: none;"
     >
