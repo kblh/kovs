@@ -38,6 +38,15 @@ module.exports = function (eleventyConfig) {
     process.env.ELEVENTY_PRODUCTION ? "/kovs" : ""
   );
 
+  // První následující koncert (datum >= dnes), seřazené podle data
+  eleventyConfig.addCollection("nextConcert", (api) => {
+    const today = DateTime.now().toISODate();
+    return api
+      .getFilteredByTag("koncerty")
+      .filter((item) => item.data.date && item.data.date >= today)
+      .sort((a, b) => (a.data.date || "").localeCompare(b.data.date || ""));
+  });
+
   return {
     pathPrefix: process.env.ELEVENTY_PRODUCTION ? "/kovs" : "/",
   };

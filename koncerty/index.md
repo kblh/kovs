@@ -4,7 +4,15 @@ layout: "default.njk"
 tags: "nav"
 ---
 
-{% for item in collections.koncerty %}
-
-  <h3>--- <a href="{{ baseUrl }}{{ item.url }}">{{ item.data.title }}</a></h3>
+<div class="max-w-7xl mx-auto px-4 py-6 w-full">
+{% for item in collections.koncerty reversed %}
+  <div>
+    {% if item.data.date %}
+      <time datetime="{{ item.data.date }}">{{ item.data.date | date }}</time>
+      –
+    {% endif %}
+    <a href="{{ baseUrl }}{{ item.url }}"><strong>{{ item.data.title }}</strong></a>
+  </div>
+  <hr>
 {% endfor %}
+</div>

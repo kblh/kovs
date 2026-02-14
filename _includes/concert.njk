@@ -9,12 +9,12 @@
     {% include "navigation.njk" %}
     <article class="max-w-4xl mx-auto px-4 py-8">
       <header class="mb-8">
-        <h1 class="text-4xl font-bold mb-4">{{ title }}</h1>
         {% if date %}
-          <time class="text-gray-600 text-lg" datetime="{{ date }}">
+          <time class="text-gray-600 text-lg block mb-2" datetime="{{ date }}">
             {{ date | date }}
           </time>
         {% endif %}
+        <h1 class="text-4xl font-bold mb-4">{{ title }}</h1>
         {% if desc %}
           <p class="text-xl text-gray-700 mt-2">{{ desc }}</p>
         {% endif %}

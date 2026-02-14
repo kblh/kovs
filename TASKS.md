@@ -2,6 +2,7 @@
 
 ## Dokončené
 
+- **14. 2. 2025** – Na homepage přidat výpis prvního následujícího koncertu (datum, název) – IMPLEMENTED: Přidána kolekce `nextConcert` v `eleventy.config.js`, která filtruje koncerty s datumem >= dnes a řadí je podle data. Homepage (`index.njk`) již měla připravený blok pro zobrazení – nyní funguje.
 - **14. 2. 2025** – Sjednotit <head> ve všech njk šablonách – IMPLEMENTED: Vytvořen partial `_includes/_head.njk` s jednotným obsahem (meta charset, description, viewport, stylesheet). Layouty `default.njk`, `concert.njk`, `gallery.njk` nyní používají `{% include "_head.njk" %}`. Sjednoceno `lang="cs"` a podpora proměnných `desc` i `description`.
 - **14. 2. 2025** – Opravit styly a relativní odkazy na GitHub Pages – IMPLEMENTED: Přidán `pathPrefix` a globální `baseUrl` v `eleventy.config.js`. Lokálně (npm run start) baseUrl="", na GitHub Pages (npm run build) baseUrl="/kovs". Šablony používají `{{ baseUrl }}` pro CSS, JS, odkazy a obrázky. Funguje lokálně i na GitHub Pages.
 - **14. 2. 2025** – Vytvořit GitHub Action pro nasazování na GitHub Pages – IMPLEMENTED: Přidán workflow `.github/workflows/deploy.yml`, který při push na `main` sestaví Eleventy web a nasadí ho na GitHub Pages pomocí `actions/upload-pages-artifact` a `actions/deploy-pages`.
