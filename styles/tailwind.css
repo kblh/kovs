@@ -3,6 +3,8 @@
 @source "_site/**/*.html";
 
 @theme {
+  /* --*: initial; */
+  
   /* Light theme colors */
   --color-background: #ffffff;
   --color-foreground: #1a1a1a;
