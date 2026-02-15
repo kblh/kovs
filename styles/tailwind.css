@@ -37,7 +37,19 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: Rockwell, 'Rockwell Nova', 'Roboto Slab', 'DejaVu Serif', 'Sitka Small', serif;
   }
+
+  h1 { font-size: var(--text-h1); }
+  h2 { font-size: var(--text-h2); }
+  h3 { font-size: var(--text-h3); }
+  h4 { font-size: var(--text-h4); }
+  h5 { font-size: var(--text-h5); }
+  h6 { font-size: var(--text-h6); }
+  h1, h2, h3, h4, h5, h6 { font-weight: 900; }
+
+  p { font-size: var(--text-base); }
+  small { font-size: var(--text-sm); }
 }
 
 @layer utilities {
