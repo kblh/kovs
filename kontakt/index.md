@@ -7,4 +7,12 @@ navOrder: 4
 
 # Kontakt
 
-Obsah kontaktní stránky bude doplněn.
+### Michal Čejka
+
++420 777 793 426
+michal.cejka60@gmail.com
+
+### Jana Kučerová
+
++420 608 264 492
+anajkucerova@gmail.com

@@ -3,19 +3,34 @@
 @source "_site/**/*.html";
 
 @theme {
-  /* --*: initial; */
+  --*: initial;
   
   /* Light theme colors */
   --color-background: #ffffff;
   --color-foreground: #1a1a1a;
-  --color-primary: #3b82f6;
-  --color-primary-foreground: #ffffff;
-  --color-secondary: #f3f4f6;
-  --color-secondary-foreground: #1a1a1a;
+  --color-primary: #d24701;
   --color-muted: #f9fafb;
-  --color-muted-foreground: #6b7280;
   --color-border: #e5e7eb;
   --color-change: #1a1a1a;
+
+  --breakpoint-sm: 20rem;
+  --breakpoint-md: 28rem;
+  --breakpoint-lg: 44rem;
+  --breakpoint-xl: 60rem;
+  --breakpoint-2xl: 76rem;
+
+  --spacing: .25rem;
+  --spacing-4_44: 4.44rem;
+
+  --text-h1: 3rem;
+  --text-h2: 2rem;
+  --text-h3: 1.5rem;
+  --text-h4: 1.25rem;
+  --text-h5: 1rem;
+  --text-h6: 0.875rem;
+
+  --text-base: 1rem;
+  --text-sm: 0.875rem;
 }
 
 @layer base {

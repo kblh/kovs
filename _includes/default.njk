@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="cs">
   <head>
-    <title>{{ title }}</title>
     <title>
-      {% block title %}Komorní orchestr Vlasty Škampové{% endblock %}
+      {% if title %}{{ title }} | {% endif %}
+      Komorní orchestr Vlasty Škampové
     </title>
     {% include "_head.njk" %}
     {% block head %}{% endblock %}
