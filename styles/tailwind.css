@@ -1,59 +1,11 @@
 @import "tailwindcss";
+@import "./base.css";
 
 @source "_site/**/*.html";
 
-@theme {
-  --*: initial;
-  
-  /* Light theme colors */
-  --color-background: #ffffff;
-  --color-foreground: #1a1a1a;
-  --color-primary: #d24701;
-  --color-muted: #f9fafb;
-  --color-border: #e5e7eb;
-  --color-change: #1a1a1a;
+@theme { --*: initial; }
+@import "./theme/spacing.css";
+@import "./theme/colors.css";
+@import "./theme/typography.css";
+@import "./theme/effects.css";
 
-  --breakpoint-sm: 20rem;
-  --breakpoint-md: 28rem;
-  --breakpoint-lg: 44rem;
-  --breakpoint-xl: 60rem;
-  --breakpoint-2xl: 76rem;
-
-  --spacing: .25rem;
-  --spacing-4_44: 4.44rem;
-
-  --text-h1: 3rem;
-  --text-h2: 2rem;
-  --text-h3: 1.5rem;
-  --text-h4: 1.25rem;
-  --text-h5: 1rem;
-  --text-h6: 0.875rem;
-
-  --text-base: 1rem;
-  --text-sm: 0.875rem;
-}
-
-@layer base {
-  body {
-    background-color: var(--color-background);
-    color: var(--color-foreground);
-    font-family: Rockwell, 'Rockwell Nova', 'Roboto Slab', 'DejaVu Serif', 'Sitka Small', serif;
-  }
-
-  h1 { font-size: var(--text-h1); }
-  h2 { font-size: var(--text-h2); }
-  h3 { font-size: var(--text-h3); }
-  h4 { font-size: var(--text-h4); }
-  h5 { font-size: var(--text-h5); }
-  h6 { font-size: var(--text-h6); }
-  h1, h2, h3, h4, h5, h6 { font-weight: 900; }
-
-  p { font-size: var(--text-base); }
-  small { font-size: var(--text-sm); }
-}
-
-@layer utilities {
-  .change {
-    color: var(--color-change);
-  }
-}

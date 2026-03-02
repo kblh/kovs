@@ -1,0 +1,14 @@
+@theme {
+  --text-h1: 3rem;
+  --text-h2: 2rem;
+  --text-h3: 1.5rem;
+  --text-h4: 1.25rem;
+  --text-h5: 1rem;
+  --text-h6: 0.875rem;
+
+  --text-base: 1rem;
+  --text-sm: 0.875rem;
+
+  --font-weight-bold: 600;
+
+}

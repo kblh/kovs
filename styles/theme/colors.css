@@ -1,0 +1,14 @@
+@theme {
+/* color primitives */
+  --color-background: #ffffff;
+  --color-foreground: #1a1a1a;
+  --color-change: #ccc;
+  --color-primary: #d24701;
+  --color-muted: #f9fafb;
+  --color-border: #e5e7eb;
+
+  /* color semantic */
+  --color-navigation: var(--color-foreground);
+  --color-navigation-hover: var(--color-change);
+  --color-navigation-active: var(--color-primary);
+}

@@ -1,0 +1,17 @@
+@theme {  
+  --breakpoint-sm: 20rem;
+  --breakpoint-md: 28rem;
+  --breakpoint-lg: 44rem;
+  --breakpoint-xl: 60rem;
+  --breakpoint-2xl: 76rem;
+
+  --container-xs: 42rem;
+  --container-sm: 48rem;
+  --container-md: 64rem;
+  --container-lg: 72rem;
+  --container-xl: 80rem;
+
+  --spacing: .25rem;
+  --spacing-4_44: 4.44rem;
+
+}

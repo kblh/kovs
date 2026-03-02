@@ -11,8 +11,10 @@
   </head>
   <body>
     {% include "navigation.njk" %}
+    <div class="max-w-md m-auto px-4">
     {% block content %}
       {{ content | safe }}
     {% endblock %}
+    </div>
   </body>
 </html>
