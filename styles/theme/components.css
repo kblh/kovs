@@ -1,0 +1,7 @@
+@theme {
+
+  --c-button-padding: calc(var(--spacing) * 3) calc(var(--spacing) * 6);
+  --c-button-background: var(--color-primary);
+  --c-button-foreground: var(--color-background);
+  
+}

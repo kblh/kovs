@@ -1,0 +1,20 @@
+/*********************
+  BUTTON
+*********************/
+
+.c-button {
+  display: inline-block;
+  padding: var(--c-button-padding);
+  background-color: var(--c-button-background);
+  color: var(--c-button-foreground);
+  font-family: var(--font-family);
+  /* font-weight: var(--font-weight-bold); */
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: opacity var(--default-transition-duration) var(--default-transition-timing-function);
+}
+
+.c-button:hover {
+  opacity: 0.85;
+}

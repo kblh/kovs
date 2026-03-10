@@ -1,4 +1,7 @@
 @theme {
+  /* --font-family: 'Inter', Helvetica, Arial, sans-serif; */
+  --font-family: 'Rockwell', 'Rockwell Nova', 'Roboto Slab', 'DejaVu Serif', 'Sitka Small', serif;
+
   --text-h1: 3rem;
   --text-h2: 2rem;
   --text-h3: 1.5rem;
@@ -10,5 +13,6 @@
   --text-sm: 0.875rem;
 
   --font-weight-bold: 600;
+  --font-weight-black: 900;
 
 }

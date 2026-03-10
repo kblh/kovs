@@ -8,8 +8,9 @@ tags: "nav"
 {% for item in collections.koncerty reversed %}
   <div>
     {% if item.data.date %}
-      <time datetime="{{ item.data.date }}">{{ item.data.date | date }}</time>
-      –
+      <time datetime="{{ item.data.date }}">
+        {{ item.data.date | date }}
+      </time>
     {% endif %}
     <a href="{{ baseUrl }}{{ item.url }}"><strong>{{ item.data.title }}</strong></a>
   </div>
