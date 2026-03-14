@@ -1,18 +1,34 @@
 @theme {
-  /* --font-family: 'Inter', Helvetica, Arial, sans-serif; */
-  --font-family: 'Rockwell', 'Rockwell Nova', 'Roboto Slab', 'DejaVu Serif', 'Sitka Small', serif;
+  --font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-family: var(--font-body);
 
-  --text-h1: 3rem;
-  --text-h2: 2rem;
-  --text-h3: 1.5rem;
-  --text-h4: 1.25rem;
-  --text-h5: 1rem;
-  --text-h6: 0.875rem;
+  /* type scale */
+  --text-hero:      clamp(3rem, 10vw, 8rem);
+  --text-h1:        clamp(2.5rem, 6vw, 4.5rem);
+  --text-h2:        clamp(1.875rem, 4vw, 3rem);
+  --text-h3:        clamp(1.5rem, 3vw, 2.25rem);
+  --text-h4:        1.25rem;
+  --text-h5:        1rem;
+  --text-h6:        0.875rem;
+  --text-base:      1rem;
+  --text-sm:        0.875rem;
+  --text-label:     0.75rem;
+  --text-micro:     0.625rem;
 
-  --text-base: 1rem;
-  --text-sm: 0.875rem;
+  /* leading */
+  --leading-hero:   0.9;
+  --leading-heading: 1.1;
+  --leading-body:   1.625;
 
-  --font-weight-bold: 600;
-  --font-weight-black: 900;
+  /* tracking */
+  --tracking-label: 0.25em;
+  --tracking-button: 0.2em;
 
+  /* weights */
+  --font-weight-light:  300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold:   600;
+  --font-weight-black:  900;
 }

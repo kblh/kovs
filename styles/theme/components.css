@@ -1,7 +1,13 @@
 @theme {
+  /* button */
+  --c-button-height:      3rem;         /* 48px — minimum touch target */
+  --c-button-padding:     0 calc(var(--spacing) * 8);
+  --c-button-background:  var(--color-foreground);
+  --c-button-foreground:  var(--color-dark-fg);
+  --c-button-font-size:   var(--text-label);
+  --c-button-tracking:    var(--tracking-button);
 
-  --c-button-padding: calc(var(--spacing) * 3) calc(var(--spacing) * 6);
-  --c-button-background: var(--color-primary);
-  --c-button-foreground: var(--color-background);
-  
+  /* card */
+  --c-card-border-color:  var(--color-foreground);
+  --c-card-padding:       calc(var(--spacing) * 8);
 }

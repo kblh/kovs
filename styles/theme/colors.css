@@ -1,14 +1,16 @@
 @theme {
-/* color primitives */
-  --color-background: #ffffff;
-  --color-foreground: #1a1a1a;
-  --color-change: #ccc;
-  --color-primary: #d24701;
-  --color-muted: #f9fafb;
-  --color-border: #e5e7eb;
+  /* color primitives */
+  --color-background: #F9F8F6;     /* Warm Alabaster */
+  --color-foreground: #1A1A1A;     /* Rich Charcoal */
+  --color-muted-bg: #EBE5DE;       /* Pale Taupe */
+  --color-muted: #6C6863;          /* Warm Grey */
+  --color-accent: #D4AF37;         /* Metallic Gold */
+  --color-accent-fg: #FFFFFF;      /* Pure White */
+  --color-dark: #1A1A1A;
+  --color-dark-fg: #F9F8F6;
 
   /* color semantic */
   --color-navigation: var(--color-foreground);
-  --color-navigation-hover: var(--color-change);
-  --color-navigation-active: var(--color-primary);
+  --color-navigation-hover: var(--color-accent);
+  --color-navigation-active: var(--color-accent);
 }

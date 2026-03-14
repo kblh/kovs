@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx @tailwindcss/cli -i styles/tailwind.css -o _site/style.css 2>&1 | tail -5)",
+      "Bash(npx @11ty/eleventy 2>&1 | tail -10)"
+    ]
+  }
+}

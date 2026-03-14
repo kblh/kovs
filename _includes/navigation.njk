@@ -1,36 +1,44 @@
-<nav class="shadow-md mb-8 relative z-50">
-  <div class="max-w-md m-auto px-4 py-4">
-    <ul class="flex flex-wrap gap-4 items-center">
-      <li>
-        <a href="{{ baseUrl }}/" class="text-navigation hover:text-navigation-hover transition-colors {% if page.url == '/' %}text-navigation-active font-bold{% endif %}">
-          Domů
-        </a>
-      </li>
-      {% if collections.koncerty %}
+<nav class="border-b border-[#1A1A1A]/15 relative z-50 bg-[#F9F8F6]">
+  <div class="max-w-[1600px] mx-auto px-8 lg:px-16 py-5">
+    <div class="flex items-center justify-between gap-8">
+
+      <!-- Wordmark -->
+      <a href="{{ baseUrl }}/"
+         class="font-['Playfair_Display'] text-sm tracking-widest uppercase text-[#1A1A1A] hover:text-[#D4AF37] transition-colors duration-500 whitespace-nowrap">
+        KOVS
+      </a>
+
+      <!-- Nav links -->
+      <ul class="flex flex-wrap items-center gap-8">
         <li>
-          <a href="{{ baseUrl }}/koncerty/" class="text-navigation hover:text-navigation-hover transition-colors {% if page.url == '/koncerty/' %}text-navigation-active font-bold{% endif %}">
-            Koncerty
+          <a href="{{ baseUrl }}/"
+             class="text-[10px] uppercase tracking-[0.25em] font-medium text-navigation hover:text-[#D4AF37] transition-colors duration-500
+                    {% if page.url == '/' %}text-[#D4AF37]{% endif %}">
+            Domů
           </a>
         </li>
-      {% endif %}
-      {% if collections.pages %}
-        {% for navPage in collections.pages %}
+        {% if collections.koncerty %}
           <li>
-            <a href="{{ baseUrl }}{{ navPage.url }}" class="text-navigation hover:text-navigation-hover transition-colors {% if navPage.url == page.url %}text-navigation-active font-bold{% endif %}">
-              {{ navPage.data.title }}
+            <a href="{{ baseUrl }}/koncerty/"
+               class="text-[10px] uppercase tracking-[0.25em] font-medium text-navigation hover:text-[#D4AF37] transition-colors duration-500
+                      {% if page.url == '/koncerty/' %}text-[#D4AF37]{% endif %}">
+              Koncerty
             </a>
           </li>
-        {% endfor %}
-      {% endif %}
-      {# {% if collections.galerie %}
-        {% for galeriePage in collections.galerie %}
-          <li>
-            <a href="{{ baseUrl }}{{ galeriePage.url }}" class="text-navigation hover:text-navigation-hover transition-colors {% if galeriePage.url == page.url %}text-navigation-active font-bold{% endif %}">
-              {{ galeriePage.data.title }}
-            </a>
-          </li>
-        {% endfor %}
-      {% endif %} #}
-    </ul>
+        {% endif %}
+        {% if collections.pages %}
+          {% for navPage in collections.pages %}
+            <li>
+              <a href="{{ baseUrl }}{{ navPage.url }}"
+                 class="text-[10px] uppercase tracking-[0.25em] font-medium text-navigation hover:text-[#D4AF37] transition-colors duration-500
+                        {% if navPage.url == page.url %}text-[#D4AF37]{% endif %}">
+                {{ navPage.data.title }}
+              </a>
+            </li>
+          {% endfor %}
+        {% endif %}
+      </ul>
+
+    </div>
   </div>
 </nav>

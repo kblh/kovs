@@ -3,18 +3,52 @@
 *********************/
 
 .c-button {
-  display: inline-block;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--c-button-height);
   padding: var(--c-button-padding);
-  background-color: var(--c-button-background);
-  color: var(--c-button-foreground);
-  font-family: var(--font-family);
-  /* font-weight: var(--font-weight-bold); */
+  font-family: var(--font-body);
+  font-size: var(--c-button-font-size);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--c-button-tracking);
+  text-transform: uppercase;
   text-decoration: none;
+  color: var(--c-button-foreground);
   border: none;
+  border-radius: 0;
   cursor: pointer;
-  transition: opacity var(--default-transition-duration) var(--default-transition-timing-function);
+  overflow: hidden;
+  /* gold slide from left via gradient */
+  background: linear-gradient(to right, var(--color-accent) 50%, var(--c-button-background) 50%);
+  background-size: 200%;
+  background-position: right;
+  box-shadow: var(--shadow-button);
+  transition:
+    background-position var(--default-transition-duration) var(--default-transition-timing-function),
+    box-shadow var(--default-transition-duration) var(--default-transition-timing-function);
 }
 
 .c-button:hover {
-  opacity: 0.85;
+  background-position: left;
+  box-shadow: var(--shadow-button-hover);
+}
+
+/* secondary / outline variant */
+.c-button--outline {
+  background: transparent;
+  color: var(--color-foreground);
+  border: 1px solid var(--color-foreground);
+  box-shadow: none;
+  transition:
+    background-color var(--default-transition-duration) var(--default-transition-timing-function),
+    color var(--default-transition-duration) var(--default-transition-timing-function);
+}
+
+.c-button--outline:hover {
+  background: var(--color-foreground);
+  background-position: initial;
+  color: var(--color-dark-fg);
+  box-shadow: none;
 }
