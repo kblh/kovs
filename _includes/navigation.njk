@@ -1,10 +1,10 @@
-<nav class="border-b border-[#1A1A1A]/15 relative z-50 bg-[#F9F8F6]">
-  <div class="max-w-[1600px] mx-auto px-8 lg:px-16 py-5">
+<nav class="border-b border-foreground/15 relative z-50 bg-background">
+  <div class="max-w-container-2xl mx-auto px-8 lg:px-16 py-5">
     <div class="flex items-center justify-between gap-8">
 
       <!-- Wordmark -->
       <a href="{{ baseUrl }}/"
-         class="font-['Playfair_Display'] text-sm tracking-widest uppercase text-[#1A1A1A] hover:text-[#D4AF37] transition-colors duration-500 whitespace-nowrap">
+         class="font-heading text-sm tracking-widest uppercase  hover:text-accent transition-colors duration-500 whitespace-nowrap">
         KOVS
       </a>
 
@@ -12,16 +12,16 @@
       <ul class="flex flex-wrap items-center gap-8">
         <li>
           <a href="{{ baseUrl }}/"
-             class="text-[10px] uppercase tracking-[0.25em] font-medium text-navigation hover:text-[#D4AF37] transition-colors duration-500
-                    {% if page.url == '/' %}text-[#D4AF37]{% endif %}">
+             class="text-micro uppercase tracking-label font-medium text-navigation hover:text-accent transition-colors duration-500
+                    {% if page.url == '/' %}text-accent{% endif %}">
             Domů
           </a>
         </li>
         {% if collections.koncerty %}
           <li>
             <a href="{{ baseUrl }}/koncerty/"
-               class="text-[10px] uppercase tracking-[0.25em] font-medium text-navigation hover:text-[#D4AF37] transition-colors duration-500
-                      {% if page.url == '/koncerty/' %}text-[#D4AF37]{% endif %}">
+               class="text-micro uppercase tracking-label font-medium text-navigation hover:text-accent transition-colors duration-500
+                      {% if page.url == '/koncerty/' %}text-accent{% endif %}">
               Koncerty
             </a>
           </li>
@@ -30,8 +30,8 @@
           {% for navPage in collections.pages %}
             <li>
               <a href="{{ baseUrl }}{{ navPage.url }}"
-                 class="text-[10px] uppercase tracking-[0.25em] font-medium text-navigation hover:text-[#D4AF37] transition-colors duration-500
-                        {% if navPage.url == page.url %}text-[#D4AF37]{% endif %}">
+                 class="text-micro uppercase tracking-label font-medium text-navigation hover:text-accent transition-colors duration-500
+                        {% if navPage.url == page.url %}text-accent{% endif %}">
                 {{ navPage.data.title }}
               </a>
             </li>

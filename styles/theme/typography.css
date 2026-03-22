@@ -5,6 +5,7 @@
 
   /* type scale */
   --text-hero:      clamp(3rem, 10vw, 8rem);
+  --text-display:   clamp(2.5rem, 8vw, 7rem);
   --text-h1:        clamp(2.5rem, 6vw, 4.5rem);
   --text-h2:        clamp(1.875rem, 4vw, 3rem);
   --text-h3:        clamp(1.5rem, 3vw, 2.25rem);
@@ -17,13 +18,15 @@
   --text-micro:     0.625rem;
 
   /* leading */
-  --leading-hero:   0.9;
+  --leading-hero:    0.9;
+  --leading-display: 0.92;
   --leading-heading: 1.1;
   --leading-body:   1.625;
 
   /* tracking */
   --tracking-label: 0.25em;
   --tracking-button: 0.2em;
+  --tracking-time:  0.15em;
 
   /* weights */
   --font-weight-light:  300;
