@@ -16,7 +16,7 @@ templateEngineOverride: njk
         </p>
 
         <div class="divide-y divide-foreground/10">
-          {% for item in collections.koncerty reversed %}
+          {% for item in collections.koncerty | reverse %}
             <div class="group py-6 first:pt-0">
               <a href="{{ baseUrl }}{{ item.url }}"
                  class="flex flex-col lg:flex-row lg:items-baseline lg:justify-between gap-2 hover:text-accent transition-colors duration-500 -mx-4 px-4">
