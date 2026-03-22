@@ -1,0 +1,29 @@
+{% extends "_includes/default.njk" %}
+
+{% block content %}
+
+  {# ── HEADER ──────────────────────────────────────────────────── #}
+  <header class="border-b border-foreground/15">
+    <div class="max-w-container-2xl mx-auto px-8 lg:px-16 py-16 lg:py-24">
+      <div class="lg:grid lg:grid-cols-12 lg:gap-8 items-end">
+        <div class="lg:col-start-2 lg:col-span-9">
+          <h1 class="font-heading text-h1 leading-heading tracking-tight">
+            {{ title }}
+          </h1>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  {# ── CONTENT ─────────────────────────────────────────────────── #}
+  <section class="border-b border-foreground/15">
+    <div class="max-w-container-2xl mx-auto px-8 lg:px-16 py-16 lg:py-24">
+      <div class="lg:grid lg:grid-cols-12 lg:gap-8">
+        <div class="lg:col-start-2 lg:col-span-8 prose leading-relaxed space-y-5">
+          {{ content | safe }}
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

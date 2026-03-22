@@ -6,23 +6,59 @@
     <script defer src="{{ baseUrl }}/js/alpine.js?v={{ version or '1' }}"></script>
   </head>
   <body>
-    {% include "navigation.njk" %}
-    <article class="max-w-4xl mx-auto px-4 py-8">
-      <header class="mb-8">
-        {% if date %}
-          <time class="text-gray-600 text-lg block mb-2" datetime="{{ date }}">
-            {{ date | date }}
-          </time>
-        {% endif %}
-        <h1 class="text-4xl font-bold mb-4">{{ title }}</h1>
-        {% if desc %}
-          <p class="text-xl text-gray-700 mt-2">{{ desc }}</p>
-        {% endif %}
-      </header>
-      
-      <div class="prose prose-lg max-w-none">
-        {{ content | safe }}
+    <!-- Vertical editorial grid lines (desktop) -->
+    <div aria-hidden="true" class="hidden lg:block fixed inset-0 pointer-events-none z-40">
+      <div class="max-w-container-2xl mx-auto h-full px-16 grid grid-cols-12 gap-0">
+        <div class="col-start-1 col-span-1 border-r border-foreground/10 h-full"></div>
+        <div class="col-start-4 col-span-1 border-r border-foreground/10 h-full"></div>
+        <div class="col-start-9 col-span-1 border-r border-foreground/10 h-full"></div>
+        <div class="col-start-12 col-span-1 border-r border-foreground/10 h-full"></div>
       </div>
+    </div>
+
+    {% include "navigation.njk" %}
+
+    <article>
+
+      {# ── HEADER ──────────────────────────────────────────────── #}
+      <header class="border-b border-foreground/15">
+        <div class="max-w-container-2xl mx-auto px-8 lg:px-16 py-16 lg:py-24">
+          <div class="lg:grid lg:grid-cols-12 lg:gap-8 items-end">
+            <div class="lg:col-start-2 lg:col-span-9">
+              <p class="u-label mb-6 flex items-center gap-3">
+                <span class="u-line"></span>
+                Koncert
+              </p>
+              {% if date %}
+                <time class="text-muted text-micro uppercase tracking-time block mb-4"
+                      datetime="{{ date }}">
+                  {{ date | date }}
+                </time>
+              {% endif %}
+              <h1 class="font-heading text-h1 leading-heading tracking-tight mb-6">
+                {{ title }}
+              </h1>
+              {% if desc %}
+                <p class="text-muted text-lg leading-relaxed max-w-xl">{{ desc }}</p>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {# ── CONTENT ─────────────────────────────────────────────── #}
+      {% if content %}
+        <section class="border-b border-foreground/15">
+          <div class="max-w-container-2xl mx-auto px-8 lg:px-16 py-16 lg:py-24">
+            <div class="lg:grid lg:grid-cols-12 lg:gap-8">
+              <div class="lg:col-start-2 lg:col-span-8 prose leading-relaxed space-y-5">
+                {{ content | safe }}
+              </div>
+            </div>
+          </div>
+        </section>
+      {% endif %}
+
     </article>
   </body>
 </html>
