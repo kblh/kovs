@@ -5,6 +5,8 @@
   --transition-slow:  700ms;
   --transition-image: 1500ms;
 
+  --aspect-video: 16 / 9;
+
   /* subtle layered shadows — never harsh */
   --shadow-xs:   0 1px 2px 0 rgba(0, 0, 0, 0.03);
   --shadow-sm:   0 2px 8px 0 rgba(0, 0, 0, 0.04);
