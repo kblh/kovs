@@ -1,15 +1,27 @@
-<nav class="border-b border-foreground/15 relative z-50 bg-background">
+<nav class="border-b border-foreground/15 relative z-50 bg-background" x-data="{ open: false }">
   <div class="max-w-container-2xl mx-auto px-8 lg:px-16 py-5">
     <div class="flex items-center justify-between gap-8">
 
       <!-- Wordmark -->
       <a href="{{ baseUrl }}/"
-         class="font-heading text-sm tracking-widest uppercase  hover:text-accent transition-colors duration-500 whitespace-nowrap">
+         class="font-heading text-sm tracking-widest uppercase hover:text-accent transition-colors duration-500 whitespace-nowrap">
         KOVS
       </a>
 
-      <!-- Nav links -->
-      <ul class="flex flex-wrap items-center gap-8">
+      <!-- Hamburger button (mobile only) -->
+      <button
+        @click="open = !open"
+        class="lg:hidden flex flex-col justify-center items-center gap-1.5 w-8 h-8 text-navigation hover:text-accent transition-colors duration-500"
+        :aria-expanded="open"
+        aria-label="Otevřít menu"
+      >
+        <span class="block w-5 h-px bg-current transition-all duration-300" :class="open ? 'rotate-45 translate-y-[7px]' : ''"></span>
+        <span class="block w-5 h-px bg-current transition-all duration-300" :class="open ? 'opacity-0' : ''"></span>
+        <span class="block w-5 h-px bg-current transition-all duration-300" :class="open ? '-rotate-45 -translate-y-[7px]' : ''"></span>
+      </button>
+
+      <!-- Nav links (desktop) -->
+      <ul class="hidden lg:flex flex-wrap items-center gap-8">
         <li>
           <a href="{{ baseUrl }}/"
              class="text-micro uppercase tracking-label font-medium text-navigation hover:text-accent transition-colors duration-500
@@ -40,5 +52,50 @@
       </ul>
 
     </div>
+  </div>
+
+  <!-- Mobile menu (static, not fixed) -->
+  <div
+    x-show="open"
+    x-transition:enter="transition duration-200 ease-out"
+    x-transition:enter-start="opacity-0 -translate-y-2"
+    x-transition:enter-end="opacity-100 translate-y-0"
+    x-transition:leave="transition duration-150 ease-in"
+    x-transition:leave-start="opacity-100 translate-y-0"
+    x-transition:leave-end="opacity-0 -translate-y-2"
+    class="lg:hidden border-t border-foreground/15"
+  >
+    <ul class="max-w-container-2xl mx-auto px-8 py-4 flex flex-col gap-1">
+      <li>
+        <a href="{{ baseUrl }}/"
+           @click="open = false"
+           class="block py-2 text-micro uppercase tracking-label font-medium text-navigation hover:text-accent transition-colors duration-500
+                  {% if page.url == '/' %}text-accent{% endif %}">
+          Domů
+        </a>
+      </li>
+      {% if collections.koncerty %}
+        <li>
+          <a href="{{ baseUrl }}/koncerty/"
+             @click="open = false"
+             class="block py-2 text-micro uppercase tracking-label font-medium text-navigation hover:text-accent transition-colors duration-500
+                    {% if page.url == '/koncerty/' %}text-accent{% endif %}">
+            Koncerty
+          </a>
+        </li>
+      {% endif %}
+      {% if collections.pages %}
+        {% for navPage in collections.pages %}
+          <li>
+            <a href="{{ baseUrl }}{{ navPage.url }}"
+               @click="open = false"
+               class="block py-2 text-micro uppercase tracking-label font-medium text-navigation hover:text-accent transition-colors duration-500
+                      {% if navPage.url == page.url %}text-accent{% endif %}">
+              {{ navPage.data.title }}
+            </a>
+          </li>
+        {% endfor %}
+      {% endif %}
+    </ul>
   </div>
 </nav>
