@@ -32,6 +32,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({
     "node_modules/alpinejs/dist/cdn.min.js": "js/alpine.js",
   });
+  eleventyConfig.addPassthroughCopy("koncerty/pdf");
 
   // baseUrl: prázdné lokálně, "/kovs" na GitHub Pages – pro fungování stylů a odkazů v obou prostředích
   eleventyConfig.addGlobalData("baseUrl", () =>

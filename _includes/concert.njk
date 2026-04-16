@@ -41,6 +41,13 @@
               {% if desc %}
                 <p class="text-muted text-lg leading-relaxed max-w-xl">{{ desc }}</p>
               {% endif %}
+              {% if pdf %}
+                <a href="{{ baseUrl }}/koncerty/pdf/{{ pdf }}"
+                   target="_blank"
+                   class="inline-flex items-center gap-2 text-accent hover:underline mt-4">
+                  Stáhnout pozvánku (PDF)
+                </a>
+              {% endif %}
             </div>
           </div>
         </div>
