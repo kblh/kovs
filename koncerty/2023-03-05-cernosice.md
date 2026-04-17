@@ -1,6 +1,6 @@
 ---
-title: "Černošice"
-desc: "Mozart, Strauss"
+title: "Mozart, Strauss"
+place: "Kostel Nanebevzetí Panny Marie v Černošicích"
 date: "2023-03-05"
 tags: "koncerty"
 layout: "concert.njk"

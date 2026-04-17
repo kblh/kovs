@@ -1,6 +1,6 @@
 ---
-title: "Muzeum hudby"
-desc: "Dvořák, Ravel, Debussy"
+title: "Dvořák, Ravel, Debussy"
+place: "České muzeum hudby"
 date: "2018-10-21"
 tags: "koncerty"
 layout: "concert.njk"

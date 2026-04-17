@@ -1,6 +1,6 @@
 ---
-title: "Muzeum hudby"
-desc: "Grieg, Britten, Sarasate, Wirén"
+title: "Grieg, Britten, Sarasate, Wirén"
+place: "České muzeum hudby"
 date: "2018-06-25"
 tags: "koncerty"
 layout: "concert.njk"

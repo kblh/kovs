@@ -1,6 +1,6 @@
 ---
-title: "Arcibiskupské gymnázium"
-desc: "Čajkovskij, Gershwin, Mozart"
+title: "Čajkovskij, Gershwin, Mozart"
+place: "Arcibiskupské gymnázium"
 date: "2019-06-13"
 tags: "koncerty"
 layout: "concert.njk"

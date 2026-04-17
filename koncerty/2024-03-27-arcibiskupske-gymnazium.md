@@ -1,6 +1,6 @@
 ---
-title: "Arcibiskupské gymnázium"
-desc: "Casadesus, Pergolesi"
+title: "Casadesus, Pergolesi"
+place: "Arcibiskupské gymnázium"
 date: "2024-03-27"
 tags: "koncerty"
 layout: "concert.njk"

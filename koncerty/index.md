@@ -30,8 +30,8 @@ templateEngineOverride: njk
                   </time>
                 {% endif %}
               </a>
-              {% if item.data.desc %}
-                <p class="text-muted text-sm mt-2 leading-relaxed">{{ item.data.desc }}</p>
+              {% if item.data.place %}
+                <p class="text-muted text-sm mt-2 leading-relaxed">{{ item.data.place }}</p>
               {% endif %}
             </div>
           {% endfor %}
