@@ -5,7 +5,8 @@
       "Bash(npx @11ty/eleventy 2>&1 | tail -10)",
       "Bash(grep *)",
       "Bash(git add *)",
-      "Bash(git commit -m ' *)"
+      "Bash(git commit -m ' *)",
+      "Bash(node *)"
     ]
   }
 }
