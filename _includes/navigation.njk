@@ -24,7 +24,7 @@
       <ul class="hidden lg:flex flex-wrap items-center gap-8">
         <li>
           <a href="{{ baseUrl }}/"
-             class="text-micro uppercase tracking-label font-medium text-navigation hover:text-accent transition-colors duration-500
+             class="text-sm uppercase tracking-label font-medium text-navigation hover:text-accent transition-colors duration-500
                     {% if page.url == '/' %}text-accent{% endif %}">
             Domů
           </a>
@@ -32,7 +32,7 @@
         {% if collections.koncerty %}
           <li>
             <a href="{{ baseUrl }}/koncerty/"
-               class="text-micro uppercase tracking-label font-medium text-navigation hover:text-accent transition-colors duration-500
+               class="text-sm uppercase tracking-label font-medium text-navigation hover:text-accent transition-colors duration-500
                       {% if page.url == '/koncerty/' %}text-accent{% endif %}">
               Koncerty
             </a>
@@ -42,7 +42,7 @@
           {% for navPage in collections.pages %}
             <li>
               <a href="{{ baseUrl }}{{ navPage.url }}"
-                 class="text-micro uppercase tracking-label font-medium text-navigation hover:text-accent transition-colors duration-500
+                 class="text-sm uppercase tracking-label font-medium text-navigation hover:text-accent transition-colors duration-500
                         {% if navPage.url == page.url %}text-accent{% endif %}">
                 {{ navPage.data.title }}
               </a>
@@ -69,7 +69,7 @@
       <li>
         <a href="{{ baseUrl }}/"
            @click="open = false"
-           class="block py-2 text-micro uppercase tracking-label font-medium text-navigation hover:text-accent transition-colors duration-500
+           class="block py-2 text-sm uppercase tracking-label font-medium text-navigation hover:text-accent transition-colors duration-500
                   {% if page.url == '/' %}text-accent{% endif %}">
           Domů
         </a>
@@ -78,7 +78,7 @@
         <li>
           <a href="{{ baseUrl }}/koncerty/"
              @click="open = false"
-             class="block py-2 text-micro uppercase tracking-label font-medium text-navigation hover:text-accent transition-colors duration-500
+             class="block py-2 text-sm uppercase tracking-label font-medium text-navigation hover:text-accent transition-colors duration-500
                     {% if page.url == '/koncerty/' %}text-accent{% endif %}">
             Koncerty
           </a>
@@ -89,7 +89,7 @@
           <li>
             <a href="{{ baseUrl }}{{ navPage.url }}"
                @click="open = false"
-               class="block py-2 text-micro uppercase tracking-label font-medium text-navigation hover:text-accent transition-colors duration-500
+               class="block py-2 text-sm uppercase tracking-label font-medium text-navigation hover:text-accent transition-colors duration-500
                       {% if navPage.url == page.url %}text-accent{% endif %}">
               {{ navPage.data.title }}
             </a>

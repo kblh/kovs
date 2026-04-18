@@ -6,16 +6,6 @@
     <script defer src="{{ baseUrl }}/js/alpine.js?v={{ version or '1' }}"></script>
   </head>
   <body x-data="galleryLightbox()">
-    <!-- Vertical editorial grid lines (desktop) -->
-    <div aria-hidden="true" class="hidden lg:block fixed inset-0 pointer-events-none z-40">
-      <div class="max-w-container-2xl mx-auto h-full px-16 grid grid-cols-12 gap-0">
-        <div class="col-start-1 col-span-1 border-r border-foreground/10 h-full"></div>
-        <div class="col-start-4 col-span-1 border-r border-foreground/10 h-full"></div>
-        <div class="col-start-9 col-span-1 border-r border-foreground/10 h-full"></div>
-        <div class="col-start-12 col-span-1 border-r border-foreground/10 h-full"></div>
-      </div>
-    </div>
-
     {% include "navigation.njk" %}
 
     <article>
