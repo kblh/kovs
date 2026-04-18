@@ -12,8 +12,8 @@
     <article>
 
       {# ── HEADER ──────────────────────────────────────────────── #}
-      <header class="border-b border-foreground/15">
-        <div class="max-w-container-2xl mx-auto px-8 lg:px-16 py-16 lg:py-24">
+      <header class="border-bX Xborder-foreground/15">
+        <div class="max-w-container-2xl mx-auto px-8 lg:px-16 py-8 lg:py-8">
           <div class="lg:grid lg:grid-cols-12 lg:gap-8 items-end">
             <div class="lg:col-start-2 lg:col-span-9">
               <p class="u-label mb-6 flex items-center gap-3">
@@ -21,7 +21,7 @@
                 Koncert
               </p>
               {% if date %}
-                <time class="text-muted text-micro uppercase tracking-time block mb-4"
+                <time class="text-muted text-sm uppercase tracking-time block mb-4"
                       datetime="{{ date }}">
                   {{ date | date }}
                 </time>
@@ -29,9 +29,9 @@
               <h1 class="font-heading text-h1 leading-heading tracking-tight mb-6">
                 {{ title }}
               </h1>
-              {% if place %}
+              {# {% if place %}
                 <p class="text-muted text-lg leading-relaxed max-w-xl">{{ place }}</p>
-              {% endif %}
+              {% endif %} #}
               {% if pdf %}
                 <a href="{{ baseUrl }}/koncerty/pdf/{{ pdf }}"
                    target="_blank"
@@ -47,7 +47,7 @@
       {# ── CONTENT ─────────────────────────────────────────────── #}
       {% if content %}
         <section class="border-b border-foreground/15">
-          <div class="max-w-container-2xl mx-auto px-8 lg:px-16 py-16 lg:py-24">
+          <div class="max-w-container-2xl mx-auto px-8 lg:px-16 py-8 lg:py-8">
             <div class="lg:grid lg:grid-cols-12 lg:gap-8">
               <div class="lg:col-start-2 lg:col-span-8 prose leading-relaxed space-y-5">
                 {{ content | safe }}
