@@ -1,0 +1,12 @@
+{
+  "templates_folder": "_templates",
+  "trigger_on_file_creation": true,
+  "enable_folder_templates": true,
+  "folder_templates": [
+    { "folder": "koncerty", "template": "_templates/koncert.md" },
+    { "folder": "interpreti", "template": "_templates/interpret.md" }
+  ],
+  "syntax_highlighting": true,
+  "enable_system_commands": false,
+  "user_scripts_folder": ""
+}
