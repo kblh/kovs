@@ -155,32 +155,4 @@
     </div>
   </section>
 
-  {# ── FOOTER CTA ────────────────────────────────────────────────── #}
-  <footer class="bg-dark">
-    <div class="max-w-container-2xl mx-auto px-8 lg:px-16 py-16 lg:py-24">
-      <div class="lg:grid lg:grid-cols-12 lg:gap-8 items-end">
-        <div class="lg:col-start-2 lg:col-span-8">
-          <p class="text-micro uppercase tracking-label text-dark-fg/50 mb-6 flex items-center gap-3">
-            <span class="block w-8 h-px bg-gold"></span>
-            Kontakt
-          </p>
-          <h2 class="font-heading text-3xl lg:text-5xl text-dark-fg leading-tight mb-4">
-            Přijďte nás poslouchat
-          </h2>
-          <p class="text-dark-fg/60 leading-relaxed mb-10 max-w-md">
-            Sledujte naše koncerty a buďte u každého vystoupení.
-          </p>
-          {% if collections.koncerty %}
-            <a href="{{ baseUrl }}/koncerty/" class="c-button">Nadcházející koncerty</a>
-          {% endif %}
-        </div>
-        <div class="hidden lg:block lg:col-start-12 lg:col-span-1 text-right">
-          <p class="text-micro text-dark-fg/25 uppercase tracking-button">
-            © {{ "" | date("yyyy") }}
-          </p>
-        </div>
-      </div>
-    </div>
-  </footer>
-
 {% endblock %}
