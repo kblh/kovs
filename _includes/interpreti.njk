@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="cs">
+  <head>
+    <title>{{ title }} | Komorní orchestr Vlasty Škampové</title>
+    {% include "_head.njk" %}
+    <script defer src="{{ baseUrl }}/js/alpine.js?v={{ version or '1' }}"></script>
+  </head>
+  <body>
+
+    {% include "navigation.njk" %}
+
+    <article>
+
+      {# ── HEADER ──────────────────────────────────────────────── #}
+      <header class="border-b border-foreground/15">
+        <div class="max-w-container-2xl mx-auto px-8 lg:px-16 py-16 lg:py-24">
+          <div class="lg:grid lg:grid-cols-12 lg:gap-8 items-end">
+            <div class="lg:col-start-2 lg:col-span-9">
+              <h1 class="font-heading text-h1 leading-heading tracking-tight">
+                {{ title }}
+              </h1>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {# ── LIST ────────────────────────────────────────────────── #}
+      <section class="border-b border-foreground/15">
+        <div class="max-w-container-2xl mx-auto px-8 lg:px-16 py-16 lg:py-24">
+          <div class="lg:grid lg:grid-cols-12 lg:gap-8">
+            <div class="lg:col-start-2 lg:col-span-10">
+
+              <p class="u-label mb-8 flex items-center gap-3">
+                <span class="u-line"></span>
+                Přehled interpretů
+              </p>
+
+              <div class="divide-y divide-foreground/10">
+                {% for item in collections.interpreti %}
+                  {% include "interpret-row.njk" %}
+                {% endfor %}
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  </body>
+</html>

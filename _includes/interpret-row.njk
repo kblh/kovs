@@ -1,0 +1,18 @@
+<a href="{{ baseUrl }}{{ item.url }}"
+   class="group flex items-center gap-5 py-6 first:pt-0 hover:text-accent transition-colors duration-500 -mx-4 px-4">
+  {% if item.data.photo %}
+    <img src="{{ baseUrl }}/interpreti/img/{{ item.data.slug }}.jpg"
+         alt="{{ item.data.name }}"
+         class="w-16 h-16 lg:w-20 lg:h-20 object-cover rounded-full shrink-0" />
+  {% endif %}
+  <div class="flex flex-col lg:flex-row lg:items-baseline lg:justify-between gap-1 lg:gap-2 flex-1">
+    <h2 class="font-heading text-2xl lg:text-3xl group-hover:text-accent transition-colors duration-500">
+      {{ item.data.name }}
+    </h2>
+    {% if item.data.instrument %}
+      <p class="text-muted text-sm uppercase tracking-time shrink-0">
+        {{ item.data.instrument }}
+      </p>
+    {% endif %}
+  </div>
+</a>

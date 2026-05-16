@@ -57,6 +57,34 @@
         </section>
       {% endif %}
 
+      {# ── INTERPRETI ──────────────────────────────────────────── #}
+      {% if interpreti and interpreti.length %}
+        <section class="border-b border-foreground/15">
+          <div class="max-w-container-2xl mx-auto px-8 lg:px-16 py-8 lg:py-8">
+            <div class="lg:grid lg:grid-cols-12 lg:gap-8">
+              <div class="lg:col-start-2 lg:col-span-10">
+
+                <p class="u-label mb-8 flex items-center gap-3">
+                  <span class="u-line"></span>
+                  Účinkují
+                </p>
+
+                <div class="divide-y divide-foreground/10">
+                  {% for slug in interpreti %}
+                    {% for item in collections.interpreti %}
+                      {% if item.data.slug == slug %}
+                        {% include "interpret-row.njk" %}
+                      {% endif %}
+                    {% endfor %}
+                  {% endfor %}
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </section>
+      {% endif %}
+
     </article>
   </body>
 </html>

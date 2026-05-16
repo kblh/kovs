@@ -38,6 +38,15 @@
             </a>
           </li>
         {% endif %}
+        {% if collections.interpreti %}
+          <li>
+            <a href="{{ baseUrl }}/interpreti/"
+               class="text-sm uppercase tracking-label font-medium text-navigation hover:text-accent transition-colors duration-500
+                      {% if page.url == '/interpreti/' %}text-accent{% endif %}">
+              Interpreti
+            </a>
+          </li>
+        {% endif %}
         {% if collections.pages %}
           {% for navPage in collections.pages %}
             <li>
@@ -81,6 +90,16 @@
              class="block py-2 text-sm uppercase tracking-label font-medium text-navigation hover:text-accent transition-colors duration-500
                     {% if page.url == '/koncerty/' %}text-accent{% endif %}">
             Koncerty
+          </a>
+        </li>
+      {% endif %}
+      {% if collections.interpreti %}
+        <li>
+          <a href="{{ baseUrl }}/interpreti/"
+             @click="open = false"
+             class="block py-2 text-sm uppercase tracking-label font-medium text-navigation hover:text-accent transition-colors duration-500
+                    {% if page.url == '/interpreti/' %}text-accent{% endif %}">
+            Interpreti
           </a>
         </li>
       {% endif %}
