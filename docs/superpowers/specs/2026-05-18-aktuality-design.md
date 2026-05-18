@@ -52,7 +52,17 @@ eleventyConfig.addCollection("aktualityActive", (api) => {
 });
 ```
 
-Pole `date-from` / `date-to` jsou v YAML kebab-case (per zadání); v JS k nim přistupujeme přes `item.data["date-from"]`.
+Pole `date-from` / `date-to` jsou v YAML kebab-case (per zadání); v JS (eleventy.config.js) k nim přistupujeme přes `item.data["date-from"]`. V Nunjucks šablonách ale nelze přistupovat k hyphenated klíčům jako identifiers (`date-from` parsuje jako odčítání). Řeším to **adresářovým data souborem** `aktuality/aktuality.11tydata.js`, který přes `eleventyComputed` exponuje camelCase aliasy `dateFrom` / `dateTo`. V šablonách se pak používá `{{ dateFrom }}` (čitelnější než brackety) a YAML zůstává v kebab-case dle zadání.
+
+```js
+// aktuality/aktuality.11tydata.js
+module.exports = {
+  eleventyComputed: {
+    dateFrom: (data) => data["date-from"],
+    dateTo: (data) => data["date-to"],
+  },
+};
+```
 
 ### Detail-stránky a okno viditelnosti
 
