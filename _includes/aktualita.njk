@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="cs">
+  <head>
+    <title>{{ title }} | Komorní orchestr Vlasty Škampové</title>
+    {% include "_head.njk" %}
+    <script defer src="{{ baseUrl }}/js/alpine.js?v={{ version or '1' }}"></script>
+  </head>
+  <body>
+
+    {% include "navigation.njk" %}
+
+    <article>
+
+      {# ── HEADER ──────────────────────────────────────────────── #}
+      <header class="border-b border-foreground/15">
+        <div class="max-w-container-2xl mx-auto px-8 lg:px-16 py-8 lg:py-8">
+          <div class="lg:grid lg:grid-cols-12 lg:gap-8 items-end">
+            <div class="lg:col-start-2 lg:col-span-9">
+              <p class="u-label mb-6 flex items-center gap-3"><span class="u-line"></span>Aktualita</p>
+              {% if dateFrom %}
+                <time class="text-muted text-sm uppercase tracking-time block mb-4"
+                      datetime="{{ dateFrom }}">
+                  {{ dateFrom | date }}
+                </time>
+              {% endif %}
+              <h1 class="font-heading text-h1 leading-heading tracking-tight mb-6">
+                {{ title }}
+              </h1>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {# ── CONTENT ─────────────────────────────────────────────── #}
+      {% if content %}
+        <section class="border-b border-foreground/15">
+          <div class="max-w-container-2xl mx-auto px-8 lg:px-16 py-8 lg:py-8">
+            <div class="lg:grid lg:grid-cols-12 lg:gap-8">
+              <div class="lg:col-start-2 lg:col-span-8 prose leading-relaxed space-y-5">
+                {{ content | safe }}
+              </div>
+            </div>
+          </div>
+        </section>
+      {% endif %}
+
+    </article>
+    {% include "footer.njk" %}
+  </body>
+</html>
