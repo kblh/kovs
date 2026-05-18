@@ -1,7 +1,7 @@
 ---
 title: "Hledáme nové posily"
-date-from: "2018-06-25"
-date-to: ""
+date-from: "2026-04-18"
+date-to: "2026-04-18"
 tags: "aktuality"
 layout: "aktualita.njk"
 templateEngineOverride: njk,md
