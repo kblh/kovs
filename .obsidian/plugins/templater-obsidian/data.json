@@ -4,7 +4,8 @@
   "enable_folder_templates": true,
   "folder_templates": [
     { "folder": "koncerty", "template": "_templates/koncert.md" },
-    { "folder": "interpreti", "template": "_templates/interpret.md" }
+    { "folder": "interpreti", "template": "_templates/interpret.md" },
+    { "folder": "aktuality", "template": "_templates/aktualita.md" }
   ],
   "syntax_highlighting": true,
   "enable_system_commands": false,
