@@ -29,6 +29,15 @@
             Domů
           </a>
         </li>
+        {% if collections.aktualityActive.length %}
+          <li>
+            <a href="{{ baseUrl }}/aktuality/"
+               class="text-sm uppercase tracking-label font-medium text-navigation hover:text-accent transition-colors duration-500
+                      {% if page.url == '/aktuality/' %}text-accent{% endif %}">
+              Aktuality
+            </a>
+          </li>
+        {% endif %}
         {% if collections.koncerty %}
           <li>
             <a href="{{ baseUrl }}/koncerty/"
@@ -83,6 +92,16 @@
           Domů
         </a>
       </li>
+      {% if collections.aktualityActive.length %}
+        <li>
+          <a href="{{ baseUrl }}/aktuality/"
+             @click="open = false"
+             class="block py-2 text-sm uppercase tracking-label font-medium text-navigation hover:text-accent transition-colors duration-500
+                    {% if page.url == '/aktuality/' %}text-accent{% endif %}">
+            Aktuality
+          </a>
+        </li>
+      {% endif %}
       {% if collections.koncerty %}
         <li>
           <a href="{{ baseUrl }}/koncerty/"
