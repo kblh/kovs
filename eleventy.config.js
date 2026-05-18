@@ -50,6 +50,23 @@ module.exports = function (eleventyConfig) {
       .sort((a, b) => (a.data.date || "").localeCompare(b.data.date || ""));
   });
 
+  // Aktivní aktuality: date-from <= dnes <= date-to (nebo bez date-to), seřazeno sestupně
+  eleventyConfig.addCollection("aktualityActive", (api) => {
+    const today = DateTime.now().toISODate();
+    return api
+      .getFilteredByTag("aktuality")
+      .filter((item) => {
+        const from = item.data["date-from"];
+        const to = item.data["date-to"];
+        if (!from || from > today) return false;
+        if (to && to < today) return false;
+        return true;
+      })
+      .sort((a, b) =>
+        (b.data["date-from"] || "").localeCompare(a.data["date-from"] || "")
+      );
+  });
+
   return {
     pathPrefix: process.env.ELEVENTY_PRODUCTION ? "/kovs" : "/",
   };
