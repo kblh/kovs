@@ -4,7 +4,7 @@ desc: "Rozcestník fotogalerií"
 tags: "pages"
 layout: "default.njk"
 templateEngineOverride: njk
-navOrder: 3
+navOrder: 1
 ---
 
 <section class="border-b border-foreground/15">

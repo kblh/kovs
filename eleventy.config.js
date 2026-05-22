@@ -48,6 +48,13 @@ module.exports = function (eleventyConfig) {
       .sort((a, b) => (a.data.date || "").localeCompare(b.data.date || ""));
   });
 
+  // Stránky v navigaci, seřazené podle navOrder ze frontmatteru
+  eleventyConfig.addCollection("pages", (api) => {
+    return api
+      .getFilteredByTag("pages")
+      .sort((a, b) => (a.data.navOrder || 0) - (b.data.navOrder || 0));
+  });
+
   // Aktivní aktuality: date-from <= dnes <= date-to (nebo bez date-to), seřazeno sestupně
   eleventyConfig.addCollection("aktualityActive", (api) => {
     const today = DateTime.now().toISODate();

@@ -2,7 +2,7 @@
 title: "Kontakt"
 layout: "page.njk"
 tags: "pages"
-navOrder: 4
+navOrder: 3
 ---
 
 ### Michal Čejka
