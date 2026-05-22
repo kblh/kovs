@@ -35,11 +35,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("koncerty/pdf");
   eleventyConfig.addPassthroughCopy("historie/*.jpg");
   eleventyConfig.addPassthroughCopy("interpreti/img");
+  eleventyConfig.addPassthroughCopy("CNAME");
 
-  // baseUrl: prázdné lokálně, "/kovs" na GitHub Pages – pro fungování stylů a odkazů v obou prostředích
-  eleventyConfig.addGlobalData("baseUrl", () =>
-    process.env.ELEVENTY_PRODUCTION ? "/kovs" : ""
-  );
+  eleventyConfig.addGlobalData("baseUrl", () => "");
 
   // První následující koncert (datum >= dnes), seřazené podle data
   eleventyConfig.addCollection("nextConcert", (api) => {
@@ -67,7 +65,5 @@ module.exports = function (eleventyConfig) {
       );
   });
 
-  return {
-    pathPrefix: process.env.ELEVENTY_PRODUCTION ? "/kovs" : "/",
-  };
+  return {};
 };
