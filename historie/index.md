@@ -3,6 +3,7 @@ title: "Historie a současnost"
 layout: "page.njk"
 tags: "pages"
 navOrder: 2
+permalink: /historie-a-soucasnost/
 ---
 
 **Komorní orchestr Vlasty Škampové** je amatérský smyčcový orchestr, který vznikl počátkem roku 1994. Nese jméno po české dirigentce a klavíristce Vlastě Škampové (1937-1989). Profesorka Škampová řídila po několik desetiletí **Pražský studentský orchestr**, z něhož pochází většina současných členů orchestru.
