@@ -13,12 +13,22 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "koncerty/2025-02-05-korunni.md",
+                "file": "koncerty/2024-12-16-salvator.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2025-02-05-korunni"
+              "title": "2024-12-16-salvator"
+            }
+          },
+          {
+            "id": "b7300c24ef708301",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "Nová karta"
             }
           }
         ]
@@ -194,6 +204,8 @@
   },
   "active": "eb13af1f8a1d43cd",
   "lastOpenFiles": [
+    "koncerty/2025-06-11-korunni.md",
+    "koncerty/2025-02-05-korunni.md",
     "koncerty/2026-06-02-profesni-dum.md",
     "fotogalerie/salvator/index.md",
     "fotogalerie/salvator-cb/orig/image-03.jpg",
