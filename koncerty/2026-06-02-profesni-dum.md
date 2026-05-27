@@ -1,11 +1,14 @@
 ---
-title: "Mendelssohn, Wirén, Grieg"
-place: "Profesní dům"
-date: "2026-06-02"
-tags: "koncerty"
-layout: "concert.njk"
-pdf: "2026-06-02-profesni-dum.pdf"
-interpreti: ["michael-housa","leos-cepicky","miroslav-sekera"]
+title: Mendelssohn-Bartholdy, Wirén, Grieg
+place: Profesní dům
+date: 2026-06-02
+tags: koncerty
+layout: concert.njk
+pdf: 2026-06-02-profesni-dum.pdf
+interpreti:
+  - michael-housa
+  - leos-cepicky
+  - miroslav-sekera
 templateEngineOverride: njk,md
 ---
 
