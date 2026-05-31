@@ -15,9 +15,9 @@ templateEngineOverride: njk,md
 ## Profesní dům, Malostranské náměstí 2/25, Praha 1
 
 **Program:**
-F. Mendelssohn-Bartholdy: Koncert d moll pro housle, klavír a smyčcový orchestr 
+E. Grieg: Suita Z časů Holbergových  pro smyčcový orchestr op. 40
 D. Wirén: Serenáda pro smyčcový orchestr op. 11
-E. Grieg: Suita Z časů Holdergových  pro smyčcový orchestr op. 40
+F. Mendelssohn-Bartholdy: Koncert d moll pro housle, klavír a smyčcový orchestr 
 
 **Sólisté:** 
 Leoš Čepický – housle
