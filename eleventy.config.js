@@ -43,6 +43,7 @@ module.exports = function (eleventyConfig) {
     "node_modules/alpinejs/dist/cdn.min.js": "js/alpine.js",
   });
   eleventyConfig.addPassthroughCopy("koncerty/pdf");
+  eleventyConfig.addPassthroughCopy("aktuality/images");
   eleventyConfig.addPassthroughCopy("historie/*.jpg");
   eleventyConfig.addPassthroughCopy("interpreti/img");
   eleventyConfig.addPassthroughCopy("CNAME");

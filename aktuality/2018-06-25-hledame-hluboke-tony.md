@@ -12,3 +12,5 @@ Hledáme hluboké tóny! 🎻
 Komorní orchestr Vlasty Škampové hledá nové hráče do sekce violoncell a kontrabasů.
 
 Zkoušíme každé úterý. Pokud máte chuť hrát kvalitní repertoár v přátelském prostředí a vystupovat na pravidelných koncertech, ozvěte se nám na email: [michal.cejka60@gmail.com](mailto:michal.cejka60@gmail.com)
+
+![Hledáme posilu do sekce violoncell a kontrabasů]({{ baseUrl }}/aktuality/images/hledame-hluboke-tony.webp)
