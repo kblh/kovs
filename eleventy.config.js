@@ -4,6 +4,16 @@ const { DateTime } = require("luxon");
 
 const IMAGE_EXTENSIONS = new Set([".jpg", ".jpeg", ".png", ".gif", ".webp"]);
 
+// Datum z frontmatteru může být string ("2026-12-14") i Date (nekvótované YAML datum).
+// Porovnání Date >= "2026-12-14" vždy vrací false, proto vše normalizujeme na ISO string.
+const toISODate = (value) => {
+  if (!value) return "";
+  if (value instanceof Date) {
+    return DateTime.fromJSDate(value, { zone: "utc" }).toISODate() || "";
+  }
+  return String(value);
+};
+
 module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("date", (dateObj, format = "d. M. yyyy") => {
     if (!dateObj) return "";
@@ -44,8 +54,8 @@ module.exports = function (eleventyConfig) {
     const today = DateTime.now().toISODate();
     return api
       .getFilteredByTag("koncerty")
-      .filter((item) => item.data.date && item.data.date >= today)
-      .sort((a, b) => (a.data.date || "").localeCompare(b.data.date || ""));
+      .filter((item) => toISODate(item.data.date) >= today)
+      .sort((a, b) => toISODate(a.data.date).localeCompare(toISODate(b.data.date)));
   });
 
   // Stránky v navigaci, seřazené podle navOrder ze frontmatteru
@@ -61,14 +71,14 @@ module.exports = function (eleventyConfig) {
     return api
       .getFilteredByTag("aktuality")
       .filter((item) => {
-        const from = item.data["date-from"];
-        const to = item.data["date-to"];
+        const from = toISODate(item.data["date-from"]);
+        const to = toISODate(item.data["date-to"]);
         if (!from || from > today) return false;
         if (to && to < today) return false;
         return true;
       })
       .sort((a, b) =>
-        (b.data["date-from"] || "").localeCompare(a.data["date-from"] || "")
+        toISODate(b.data["date-from"]).localeCompare(toISODate(a.data["date-from"]))
       );
   });
 
