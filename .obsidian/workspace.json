@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "2a78cd7dddcde83b",
+        "id": "128d5ff15b1f3e6a",
         "type": "tabs",
         "children": [
           {
-            "id": "b5b224939f916fda",
+            "id": "1d7006002db82940",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 365.5
   },
   "right": {
     "id": "91d9ff871a6917dd",
@@ -192,11 +192,16 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "b5b224939f916fda",
+  "active": "1d7006002db82940",
   "lastOpenFiles": [
     "koncerty/2026-03-30-salvator.md",
     "koncerty/2026-12-14-salvator.md",
     "koncerty/2026-06-02-profesni-dum.md",
+    "koncerty/pdf/2026-12-14-salvator.pdf",
+    "koncerty/2025-12-15-salvator.md",
+    "koncerty/pdf/2026-06-02-profesni-dum.pdf",
+    "koncerty/pdf/2026-12-14-salvator.png",
+    "koncerty/pdf/2025-12-15-salvator.pdf",
     "_templates/aktualita.md",
     "docs/superpowers/plans/2026-05-16-social-links-footer.md",
     "docs/superpowers/specs/2026-05-16-social-links-footer-design.md",
@@ -224,8 +229,6 @@
     "_site/interpreti/img/michael-housa.jpg",
     "_site/interpreti/img/josef-popelka-ml.jpg",
     "_site/interpreti/img/leos-cepicky.jpg",
-    "koncerty/pdf/2019-04-05-salvator.pdf",
-    "koncerty/pdf/2018-10-21-muzeum-hudby.pdf",
     "koncerty/2018-10-21-muzeum-hudby.md",
     "TODO.md",
     "TASKS.md",
